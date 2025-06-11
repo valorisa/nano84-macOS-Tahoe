@@ -1,6 +1,3 @@
-rédige un fichier README.md très détaillé, très complet à partir de cette procédure et en tenant compte de ma dernière remarque sous forme de note et du contexte macOS Tahoe bêta 1
-
-```markdown
 # Compilation et Installation de GNU nano 8.4 sur macOS Tahoe (bêta 1, Intel)
 
 Ce guide explique en détail comment installer ou compiler l’éditeur de texte GNU nano 8.4 sur un Mac Intel équipé de macOS Tahoe (bêta 1). Il couvre à la fois l’installation via Homebrew (recommandée) et la compilation manuelle, en tenant compte des spécificités et précautions liées à l’utilisation d’une version bêta de macOS.
@@ -179,5 +176,3 @@ include "/usr/local/share/nano/*.nanorc"
 ---
 
 **Bonne installation et bonne édition avec nano sur macOS Tahoe !**
-```
-
