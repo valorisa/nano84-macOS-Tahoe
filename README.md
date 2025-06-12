@@ -102,6 +102,13 @@ Ce guide explique en détail comment installer ou compiler l’éditeur de texte
      ```
      > *Adaptez les chemins si Homebrew est installé ailleurs.*
 
+> **Note sur l’option `--with-magic` et la bibliothèque `libmagic` :**
+>
+> - **Le nom correct de l'option** : L'option pour le script `configure` de nano n'est pas `--enable-magiclib`, mais bien `--with-magic`.
+> - **À quoi sert cette option ?** Cette option permet à nano d'utiliser la bibliothèque *libmagic*. Il s'agit de la bibliothèque qui se cache derrière la commande `file` de macOS et Linux, capable d'identifier le type d'un fichier (par exemple, un script Python, un document XML, un fichier C++) en analysant son contenu, et non pas seulement son extension.  
+>   Pour nano, l'avantage est considérable : si vous ouvrez un fichier sans extension ou avec une extension incorrecte, nano peut quand même détecter automatiquement son type et appliquer la coloration syntaxique appropriée.
+> - **Le nom du paquet à installer** : Le paquet correspondant à cette bibliothèque s'appelle bien `libmagic`. Vous devez donc l'installer avant de lancer la compilation.
+
 5. **Compiler et installer**
    ```
    make
