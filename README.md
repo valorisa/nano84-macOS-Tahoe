@@ -30,36 +30,44 @@ Ce guide explique en détail comment installer ou compiler l’éditeur de texte
 
 **Homebrew** est le gestionnaire de paquets le plus populaire sur macOS. Il simplifie l’installation de logiciels et la gestion des dépendances.
 
-### Étapes
+### Étapes pour l'installation via Homebrew
 
 1. **Installer ou mettre à jour les outils de développement Xcode**
-   ```
+
+   ```sh
    xcode-select --install
    ```
+
    > Vérifiez que la version installée correspond bien à macOS Tahoe (bêta 1).
 
 2. **Installer ou mettre à jour Homebrew**
-   ```
+
+   ```sh
    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
    ```
 
 3. **Diagnostiquer la compatibilité Homebrew**
-   ```
+
+   ```sh
    brew doctor
    ```
+
    > Corrigez les éventuels avertissements signalés.
 
 4. **Installer nano**
-   ```
+
+   ```sh
    brew update
    brew install nano
    ```
 
 5. **Vérifier l’installation**
-   ```
+
+   ```sh
    which nano
    nano --version
    ```
+
    > Le chemin doit pointer vers `/usr/local/bin/nano` (pour Mac Intel) et la version affichée doit être 8.4 ou ultérieure.
 
 ---
@@ -68,21 +76,24 @@ Ce guide explique en détail comment installer ou compiler l’éditeur de texte
 
 À utiliser si Homebrew échoue ou si vous souhaitez contrôler précisément les options de compilation.
 
-### Étapes
+### Étapes pour la compilation manuelle
 
 1. **Installer les outils de développement Xcode**
    (voir Méthode 1, étape 1)
 
 2. **Installer les dépendances nécessaires**
-   ```
+
+   ```sh
    brew install ncurses gettext libmagic
    ```
+
    - `ncurses` : gestion de l’interface terminal
    - `gettext` : internationalisation
    - `libmagic` : détection du type de fichier (optionnelle mais recommandée pour la coloration syntaxique avancée)
 
 3. **Télécharger et extraire le code source**
-   ```
+
+   ```sh
    cd ~/Downloads
    curl -O https://www.nano-editor.org/dist/v8/nano-8.4.tar.xz
    tar -xf nano-8.4.tar.xz
@@ -91,16 +102,30 @@ Ce guide explique en détail comment installer ou compiler l’éditeur de texte
 
 4. **Configurer la compilation**
    - **Tentative simple :**
-     ```
+
+     ```sh
      ./configure --enable-utf8 --with-magic
      ```
+
    - **Si une dépendance n’est pas trouvée (ex : "ncurses not found") :**
-     ```
+
+     ```sh
      export LDFLAGS="-L/usr/local/opt/ncurses/lib -L/usr/local/opt/gettext/lib -L/usr/local/opt/libmagic/lib"
      export CPPFLAGS="-I/usr/local/opt/ncurses/include -I/usr/local/opt/gettext/include -I/usr/local/opt/libmagic/include"
      ./configure --enable-utf8 --with-magic
      ```
+
      > *Adaptez les chemins si Homebrew est installé ailleurs.*
+
+5. **Compiler et installer**
+
+   ```sh
+   make
+   sudo make install
+   ```
+
+6. **Vérifier l’installation**
+   (voir Méthode 1, étape 5)
 
 > **Note sur l’option `--with-magic` et la bibliothèque `libmagic` :**
 >
@@ -109,23 +134,16 @@ Ce guide explique en détail comment installer ou compiler l’éditeur de texte
 >   Pour nano, l'avantage est considérable : si vous ouvrez un fichier sans extension ou avec une extension incorrecte, nano peut quand même détecter automatiquement son type et appliquer la coloration syntaxique appropriée.
 > - **Le nom du paquet à installer** : Le paquet correspondant à cette bibliothèque s'appelle bien `libmagic`. Vous devez donc l'installer avant de lancer la compilation.
 
-5. **Compiler et installer**
-   ```
-   make
-   sudo make install
-   ```
-
-6. **Vérifier l’installation**
-   (voir Méthode 1, étape 5)
-
 ---
 
 ## Configuration de la coloration syntaxique
 
 Pour bénéficier de la coloration syntaxique avancée (notamment grâce à libmagic), ajoutez à votre fichier `~/.nanorc` :
-```
+
+```text
 include "/usr/local/share/nano/*.nanorc"
 ```
+
 > Si nano a été installé ailleurs, adaptez le chemin en conséquence.
 
 ---
@@ -134,9 +152,11 @@ include "/usr/local/share/nano/*.nanorc"
 
 - **En cas d’échec de compilation ou d’installation d’une dépendance**, consultez attentivement les messages d’erreur : ils vous indiqueront si un chemin doit être précisé ou si une bibliothèque manque.
 - **Pour libmagic**, si nano ne détecte pas la bibliothèque, vérifiez que le fichier `libmagic.dylib` est bien accessible dans `/usr/local/lib` (Intel). Si besoin, créez un lien symbolique :
-  ```
+
+  ```sh
   sudo ln -s /usr/local/opt/libmagic/lib/libmagic.dylib /usr/local/lib/libmagic.dylib
   ```
+
 - **Gardez à l’esprit que la stabilité des outils Homebrew ou Xcode peut varier sur une bêta.** Consultez régulièrement les issues sur GitHub ou les forums pour des solutions communautaires récentes.
 
 ---
@@ -164,7 +184,7 @@ include "/usr/local/share/nano/*.nanorc"
 >
 > Cependant, il arrive que le script de configuration (`./configure`) ne détecte pas correctement les bibliothèques installées par Homebrew, notamment si le paquet est "keg-only" ou si le script ne recherche pas dans les chemins Homebrew par défaut. Définir explicitement :
 >
-> ```
+> ```sh
 > export LDFLAGS="-L/usr/local/opt/libmagic/lib"
 > export CPPFLAGS="-I/usr/local/opt/libmagic/include"
 > ```
