@@ -135,23 +135,31 @@ Quelle que soit la méthode utilisée, vérifiez que la version installée est l
 
 ```sh
 which nano
+```
 
 > Doit retourner :
+```sh
 >  * /opt/homebrew/bin/nano (Apple Silicon)
 >  * /usr/local/bin/nano (Intel)
 >  * ... et non /usr/bin/nano (la version système).
+```
 > 
+```sh
 nano --version
+```
 
-> Doit afficher GNU nano, version 8.4 ou une version plus récente.
+> Doit afficher `GNU nano, version 8.4` ou une version plus récente.
 > 
-🎨 Configuration de la coloration syntaxique
-Pour activer les définitions de coloration syntaxique par défaut (y compris celles qui utilisent libmagic), éditez ou créez le fichier ~/.nanorc :
-# Crée le fichier s'il n'existe pas et l'ouvre
-nano ~/.nanorc
+### 🎨 Configuration de la coloration syntaxique
+Pour activer les définitions de coloration syntaxique par défaut (y compris celles qui utilisent libmagic), éditez ou créez le fichier `~/.nanorc` :
+
+Cela crée le fichier s'il n'existe pas et l'ouvre
+`nano ~/.nanorc`
 
 Ajoutez cette ligne à l'intérieur :
+```text
 include "$(brew --prefix)/share/nano/*.nanorc"
+```
 
 > Utiliser $(brew --prefix) garantit que le chemin est correct sur toutes les architectures.
 > 
