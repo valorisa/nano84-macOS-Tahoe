@@ -1,4 +1,4 @@
-# Installer GNU nano 📝 sur macOS Tahoe (bêta)
+# Installer GNU nano 📝 sur macOS Tahoe (bêta) sur architecture Intel
 
 Ce guide détaille l'installation de l'éditeur de texte **GNU nano** (v8.4 ou plus récent) sur un Mac équipé de **macOS Tahoe (bêta 1)**. Il couvre la méthode recommandée via Homebrew et la compilation manuelle pour les utilisateurs avancés.
 
