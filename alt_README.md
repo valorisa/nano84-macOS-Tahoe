@@ -161,27 +161,29 @@ Ajoutez cette ligne à l'intérieur :
 include "$(brew --prefix)/share/nano/*.nanorc"
 ```
 
-> Utiliser $(brew --prefix) garantit que le chemin est correct sur toutes les architectures.
+> Utiliser `$(brew --prefix)` garantit que le chemin est correct sur toutes les architectures.
 > 
-Dépannage
+### Dépannage
  * Problème de PATH : Si la commande which nano retourne /usr/bin/nano, votre PATH n'est pas correctement configuré. Revoyez l'étape 1 de la méthode Homebrew.
  * Erreurs de compilation : Lisez attentivement les erreurs. Le plus souvent, il s'agit d'une dépendance manquante ou d'un chemin mal configuré (LDFLAGS/CPPFLAGS).
  * Conflits avec la version système : Assurez-vous que /usr/local/bin (Intel) ou /opt/homebrew/bin (Apple Silicon) est listé avant /usr/bin dans votre variable d'environnement $PATH.
  * Problèmes liés à la bêta : Consultez les discussions sur le dépôt GitHub de Homebrew pour des problèmes spécifiques à macOS Tahoe.
-Résumé des commandes
+
+### Résumé des commandes
 | Action | Commande |
 |---|---|
-| Installer/Mettre à jour les CLT de Xcode | xcode-select --install |
-| Installer Homebrew | /bin/bash -c "$(curl ...)" |
-| Configurer le PATH pour Homebrew (Zsh) | echo 'eval "$($(brew --prefix)/bin/brew shellenv)"' >> ~/.zshrc && source ~/.zshrc |
-| Diagnostiquer Homebrew | brew doctor |
-| Installer via Homebrew | brew update && brew install nano |
-| Installer dépendances (manuel) | brew install ncurses gettext libmagic |
-| Configurer (manuel) | ./configure --enable-utf8 --with-magic |
-| Compiler et installer (manuel) | make && make check && sudo make install |
-| Vérifier le chemin d'installation | which nano |
-| Vérifier la version | nano --version |
-Ressources utiles
+| Installer/Mettre à jour les CLT de Xcode | `xcode-select --install` |
+| Installer Homebrew | `/bin/bash -c "$(curl ...)"` |
+| Configurer le PATH pour Homebrew (Zsh) | `echo 'eval "$($(brew --prefix)/bin/brew shellenv)"' >> ~/.zshrc && source ~/.zshrc` |
+| Diagnostiquer Homebrew | `brew doctor` |
+| Installer via Homebrew | `brew update && brew install nano` |
+| Installer dépendances (manuel) | `brew install ncurses gettext libmagic` |
+| Configurer (manuel) | `./configure --enable-utf8 --with-magic` |
+| Compiler et installer (manuel) | `make && make check && sudo make install` |
+| Vérifier le chemin d'installation | `which nano` |
+| Vérifier la version | `nano --version` |
+
+### Ressources utiles
  * Site officiel de GNU nano
  * Site officiel de Homebrew
  * Page de la formule nano sur Homebrew
