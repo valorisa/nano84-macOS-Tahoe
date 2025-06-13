@@ -164,8 +164,8 @@ include "$(brew --prefix)/share/nano/*.nanorc"
 > Utiliser `$(brew --prefix)` garantit que le chemin est correct sur toutes les architectures.
 > 
 ### Dépannage
- * Problème de PATH : Si la commande which nano retourne `/usr/bin/nano`, votre PATH n'est pas correctement configuré. Revoyez l'étape 1 de la méthode Homebrew.
- * Erreurs de compilation : Lisez attentivement les erreurs. Le plus souvent, il s'agit d'une dépendance manquante ou d'un chemin mal configuré (LDFLAGS/CPPFLAGS).
+ * Problème de *PATH* : Si la commande which nano retourne `/usr/bin/nano`, votre *PATH* n'est pas correctement configuré. Revoyez l'étape 1 de la méthode Homebrew.
+ * Erreurs de compilation : Lisez attentivement les erreurs. Le plus souvent, il s'agit d'une dépendance manquante ou d'un chemin mal configuré (**LDFLAGS**/**CPPFLAGS**).
  * Conflits avec la version système : Assurez-vous que `/usr/local/bin` (Intel) ou `/opt/homebrew/bin` (Apple Silicon) est listé avant `/usr/bin` dans votre variable d'environnement **$PATH**.
  * Problèmes liés à la bêta : Consultez les discussions sur le dépôt GitHub de Homebrew pour des problèmes spécifiques à macOS Tahoe.
 
