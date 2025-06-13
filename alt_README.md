@@ -138,11 +138,11 @@ which nano
 ```
 
 > Doit retourner :
-```sh
->  * /opt/homebrew/bin/nano (Apple Silicon)
->  * /usr/local/bin/nano (Intel)
->  * ... et non /usr/bin/nano (la version système).
-```
+
+>  * `/opt/homebrew/bin/nano` (Apple Silicon)
+>  * `/usr/local/bin/nano` (Intel)
+>  * ... et non `/usr/bin/nano` (la version système).
+
 > 
 ```sh
 nano --version
