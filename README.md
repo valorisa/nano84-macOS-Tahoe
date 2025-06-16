@@ -101,7 +101,7 @@ Ce guide explique en détail comment installer ou compiler l’éditeur de texte
    ```
 
 4. **Configurer la compilation**
-   - **Tentative simple :**
+   - **Tentative simple avec exports préliminaires :**
 
      ```sh
      export CPPFLAGS="-I/usr/local/opt/ncurses/include"
