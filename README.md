@@ -123,7 +123,7 @@ Ce guide explique en détail comment installer ou compiler l’éditeur de texte
      ./configure --enable-utf8 --enable-libmagic
      ```
 
-     > *Adaptez les chemins si Homebrew est installé ailleurs.*
+     > Adaptez les chemins si Homebrew est installé ailleurs.
 <!-- markdownlint-disable-next-line MD029 -->
 5. **Compiler et installer**
 
