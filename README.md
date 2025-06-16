@@ -1,6 +1,6 @@
-# Compilation et Installation de GNU nano 8.4 sur macOS Tahoe bêta 1 (Intel)
+# Compilation et Installation de GNU nano 8.5 sur macOS Tahoe bêta 1 (Intel)
 
-Ce guide explique en détail comment installer ou compiler l’éditeur de texte GNU nano 8.4 sur un Mac Intel équipé de macOS Tahoe (bêta 1). Il couvre à la fois l’installation via Homebrew (recommandée) et la compilation manuelle, en tenant compte des spécificités et précautions liées à l’utilisation d’une version bêta de macOS.
+Ce guide explique en détail comment installer ou compiler l’éditeur de texte GNU nano 8.5 sur un Mac Intel équipé de macOS Tahoe (bêta 1). Il couvre à la fois l’installation via Homebrew (recommandée) et la compilation manuelle, en tenant compte des spécificités et précautions liées à l’utilisation d’une version bêta de macOS.
 
 ---
 
@@ -68,7 +68,7 @@ Ce guide explique en détail comment installer ou compiler l’éditeur de texte
    nano --version
    ```
 
-   > Le chemin doit pointer vers `/usr/local/bin/nano` (pour Mac Intel) et la version affichée doit être 8.4 ou ultérieure.
+   > Le chemin doit pointer vers `/usr/local/bin/nano` (pour Mac Intel) et la version affichée doit être 8.5 ou ultérieure.
 
 ---
 
@@ -95,9 +95,9 @@ Ce guide explique en détail comment installer ou compiler l’éditeur de texte
 
    ```sh
    cd ~/Downloads
-   curl -O https://www.nano-editor.org/dist/v8/nano-8.4.tar.xz
-   tar -xf nano-8.4.tar.xz
-   cd nano-8.4
+   curl -O https://www.nano-editor.org/dist/v8/nano-8.5.tar.xz
+   tar -xf nano-8.5.tar.xz
+   cd nano-8.5
    ```
 
 4. **Configurer la compilation**
@@ -170,7 +170,7 @@ include "/usr/local/share/nano/*.nanorc"
 | Diagnostiquer Homebrew          | `brew doctor`                                                                       |
 | Installer nano (Homebrew)       | `brew install nano`                                                                 |
 | Installer dépendances (manuel)  | `brew install ncurses gettext libmagic`                                             |
-| Télécharger nano                | `curl -O https://www.nano-editor.org/dist/v8/nano-8.4.tar.xz`                       |
+| Télécharger nano                | `curl -O https://www.nano-editor.org/dist/v8/nano-8.5.tar.xz`                       |
 | Configurer (manuel)             | `./configure --enable-utf8 --with-magic`                                            |
 | Compiler et installer           | `make && sudo make install`                                                         |
 
