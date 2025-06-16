@@ -124,7 +124,7 @@ Avant de lancer la configuration, exportez ces variables d’environnement pour 
      ```
 
      > *Adaptez les chemins si Homebrew est installé ailleurs.*
-
+<!-- markdownlint-disable-next-line MD029 -->
 5. **Compiler et installer**
 
    ```sh
@@ -132,7 +132,7 @@ Avant de lancer la configuration, exportez ces variables d’environnement pour 
    make check
    sudo make install
    ```
-
+<!-- markdownlint-disable-next-line MD029 -->
 6. **Vérifier l’installation**
    (voir Méthode 1, étape 5)
 
