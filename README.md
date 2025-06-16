@@ -104,7 +104,7 @@ Ce guide explique en détail comment installer ou compiler l’éditeur de texte
 
 Avant de lancer la configuration, exportez ces variables d’environnement pour garantir le support UTF-8 et la bonne détection des dépendances :
 
- **Tentative initiale avec exports préliminaires :**
+- **Tentative initiale avec exports préliminaires :**
 
      ```sh
      export CPPFLAGS="-I/usr/local/opt/ncurses/include"
@@ -115,7 +115,7 @@ Avant de lancer la configuration, exportez ces variables d’environnement pour 
 
      > Astuce : Ces variables forcent l’utilisation de la version Homebrew de ncurses, indispensable pour le support Unicode sur macOS.
 
- **Si une dépendance n’est pas trouvée (ex : "ncurses not found") :**
+- **Si une dépendance n’est pas trouvée (ex : "ncurses not found") :**
 
      ```sh
      export LDFLAGS="-L/usr/local/opt/ncurses/lib -L/usr/local/opt/gettext/lib -L/usr/local/opt/libmagic/lib"
@@ -125,7 +125,7 @@ Avant de lancer la configuration, exportez ces variables d’environnement pour 
 
      > *Adaptez les chemins si Homebrew est installé ailleurs.*
 
-6. **Compiler et installer**
+5. **Compiler et installer**
 
    ```sh
    make
@@ -133,7 +133,7 @@ Avant de lancer la configuration, exportez ces variables d’environnement pour 
    sudo make install
    ```
 
-7. **Vérifier l’installation**
+6. **Vérifier l’installation**
    (voir Méthode 1, étape 5)
 
 > **Note sur l’option `--with-magic` et la bibliothèque `libmagic` :**
