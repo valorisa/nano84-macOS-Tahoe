@@ -104,6 +104,9 @@ Ce guide explique en détail comment installer ou compiler l’éditeur de texte
    - **Tentative simple :**
 
      ```sh
+     export CPPFLAGS="-I/usr/local/opt/ncurses/include"
+     export LDFLAGS="-L/usr/local/opt/ncurses/lib"
+     export PKG_CONFIG_PATH="/usr/local/opt/ncurses/lib/pkgconfig"
      ./configure --enable-utf8 --enable-libmagic
      ```
 
