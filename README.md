@@ -121,6 +121,7 @@ Ce guide explique en détail comment installer ou compiler l’éditeur de texte
 
    ```sh
    make
+   make check
    sudo make install
    ```
 
