@@ -103,7 +103,7 @@ Ce guide explique en détail comment installer ou compiler l’éditeur de texte
 4. **Configurer la compilation**
 
 Avant de lancer la configuration, exportez ces variables d’environnement pour garantir le support UTF-8 et la bonne détection des dépendances :
-   - **Tentative simple avec exports préliminaires :**
+   - **Tentative initiale avec exports préliminaires :**
 
      ```sh
      export CPPFLAGS="-I/usr/local/opt/ncurses/include"
