@@ -104,7 +104,7 @@ Ce guide explique en détail comment installer ou compiler l’éditeur de texte
    - **Tentative simple :**
 
      ```sh
-     ./configure --enable-utf8 --with-magic
+     ./configure --enable-utf8 --enable-libmagic
      ```
 
    - **Si une dépendance n’est pas trouvée (ex : "ncurses not found") :**
@@ -112,7 +112,7 @@ Ce guide explique en détail comment installer ou compiler l’éditeur de texte
      ```sh
      export LDFLAGS="-L/usr/local/opt/ncurses/lib -L/usr/local/opt/gettext/lib -L/usr/local/opt/libmagic/lib"
      export CPPFLAGS="-I/usr/local/opt/ncurses/include -I/usr/local/opt/gettext/include -I/usr/local/opt/libmagic/include"
-     ./configure --enable-utf8 --with-magic
+     ./configure --enable-utf8 --enable-libmagic
      ```
 
      > *Adaptez les chemins si Homebrew est installé ailleurs.*
@@ -129,7 +129,7 @@ Ce guide explique en détail comment installer ou compiler l’éditeur de texte
 
 > **Note sur l’option `--with-magic` et la bibliothèque `libmagic` :**
 >
-> - **Le nom correct de l'option** : L'option pour le script `configure` de nano n'est pas `--enable-magiclib`, mais bien `--with-magic`.
+> - **Le nom correct de l'option** : L'option pour le script `configure` de nano n'est pas `--with-magic`, mais bien `--enable-libmagic`.
 > - **À quoi sert cette option ?** Cette option permet à nano d'utiliser la bibliothèque *libmagic*. Il s'agit de la bibliothèque qui se cache derrière la commande `file` de macOS et Linux, capable d'identifier le type d'un fichier (par exemple, un script Python, un document XML, un fichier C++) en analysant son contenu, et non pas seulement son extension.  
 >   Pour nano, l'avantage est considérable : si vous ouvrez un fichier sans extension ou avec une extension incorrecte, nano peut quand même détecter automatiquement son type et appliquer la coloration syntaxique appropriée.
 > - **Le nom du paquet à installer** : Le paquet correspondant à cette bibliothèque s'appelle bien `libmagic`. Vous devez donc l'installer avant de lancer la compilation.
@@ -171,7 +171,7 @@ include "/usr/local/share/nano/*.nanorc"
 | Installer nano (Homebrew)       | `brew install nano`                                                                 |
 | Installer dépendances (manuel)  | `brew install ncurses gettext libmagic`                                             |
 | Télécharger nano                | `curl -O https://www.nano-editor.org/dist/v8/nano-8.5.tar.xz`                       |
-| Configurer (manuel)             | `./configure --enable-utf8 --with-magic`                                            |
+| Configurer (manuel)             | `./configure --enable-utf8 --enable-libmagic`                                            |
 | Compiler et installer           | `make && sudo make install`                                                         |
 
 ---
