@@ -1,6 +1,6 @@
 # Installer GNU nano 📝 sur macOS Tahoe (bêta) sur architecture Intel
 
-Ce guide détaille l'installation de l'éditeur de texte **GNU nano** (v8.4 ou plus récent) sur un Mac équipé de **macOS Tahoe (bêta 1)**. Il couvre la méthode recommandée via Homebrew et la compilation manuelle pour les utilisateurs avancés.
+Ce guide détaille l'installation de l'éditeur de texte **GNU nano** (v8.5 ou plus récent) sur un Mac équipé de **macOS Tahoe (bêta 1)**. Il couvre la méthode recommandée via Homebrew et la compilation manuelle pour les utilisateurs avancés.
 
 ---
 
@@ -95,9 +95,9 @@ Cette méthode avancée offre un contrôle total sur les options de compilation.
 2.  **Télécharger et extraire les sources de nano**
     ```sh
     cd ~/Downloads
-    curl -o nano-8.4.tar.xz [https://www.nano-editor.org/dist/v8/nano-8.4.tar.xz](https://www.nano-editor.org/dist/v8/nano-8.4.tar.xz)
-    tar -xf nano-8.4.tar.xz
-    cd nano-8.4
+    curl -o nano-.tar.xz [https://www.nano-editor.org/dist/v8/nano-.tar.xz](https://www.nano-editor.org/dist/v8/nano-8.5.tar.xz)
+    tar -xf nano-8.5.tar.xz
+    cd nano-8.5
     ```
 
 3.  **Configurer le script de compilation**
@@ -148,7 +148,7 @@ which nano
 nano --version
 ```
 
-> Doit afficher `GNU nano, version 8.4` ou une version plus récente.
+> Doit afficher `GNU nano, version 8.5` ou une version plus récente.
 > 
 ### 🎨 Configuration de la coloration syntaxique
 Pour activer les définitions de coloration syntaxique par défaut (y compris celles qui utilisent libmagic), éditez ou créez le fichier `~/.nanorc` :
