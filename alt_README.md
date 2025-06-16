@@ -95,7 +95,7 @@ Cette méthode avancée offre un contrôle total sur les options de compilation.
 2.  **Télécharger et extraire les sources de nano**
     ```sh
     cd ~/Downloads
-    curl -o nano-.tar.xz [https://www.nano-editor.org/dist/v8/nano-.tar.xz](https://www.nano-editor.org/dist/v8/nano-8.5.tar.xz)
+    curl -O https://www.nano-editor.org/dist/v8/nano-8.5.tar.xz
     tar -xf nano-8.5.tar.xz
     cd nano-8.5
     ```
