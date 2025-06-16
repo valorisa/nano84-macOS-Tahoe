@@ -34,7 +34,7 @@ Avant de commencer, assurez-vous d'avoir :
 
 2.  **Homebrew :** Le gestionnaire de paquets pour macOS. S'il n'est pas installé, exécutez :
     ```sh
-    /bin/bash -c "$(curl -fsSL [https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh](https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh))"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     ```
 
 ---
