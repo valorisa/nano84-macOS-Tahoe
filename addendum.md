@@ -46,6 +46,7 @@ configure: error:
 4. **Compiler et installer**  
    ```
    make
+   make check
    sudo make install
    ```
 
