@@ -103,7 +103,7 @@ Cette méthode avancée offre un contrôle total sur les options de compilation.
 3.  **Configurer le script de compilation**
     Le script `./configure` prépare les fichiers pour la compilation.
     ```sh
-    ./configure --enable-utf8 --with-magic
+    ./configure --enable-utf8 --enable-libmagic
     ```
     > **💡 Note sur les dépendances non trouvées :**
     > Si le script se plaint de ne pas trouver `ncurses` ou une autre bibliothèque, vous devrez spécifier manuellement les chemins d'accès de Homebrew.
@@ -113,7 +113,7 @@ Cette méthode avancée offre un contrôle total sur les options de compilation.
     > export CPPFLAGS="-I$(brew --prefix ncurses)/include -I$(brew --prefix gettext)/include -I$(brew --prefix libmagic)/include"
     > 
     > # Relancez ensuite la configuration
-    > ./configure --enable-utf8 --with-magic
+    > ./configure --enable-utf8 --enable-libmagic
     > ```
     > La commande `brew --prefix <formule>` retourne le chemin d'installation correct, que ce soit sur Intel ou Apple Silicon.
 
@@ -178,7 +178,7 @@ include "$(brew --prefix)/share/nano/*.nanorc"
 | Diagnostiquer Homebrew | `brew doctor` |
 | Installer via Homebrew | `brew update && brew install nano` |
 | Installer dépendances (manuel) | `brew install ncurses gettext libmagic` |
-| Configurer (manuel) | `./configure --enable-utf8 --with-magic` |
+| Configurer (manuel) | `./configure --enable-utf8 --enable-libmagic` |
 | Compiler et installer (manuel) | `make && make check && sudo make install` |
 | Vérifier le chemin d'installation | `which nano` |
 | Vérifier la version | `nano --version` |
