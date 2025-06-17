@@ -29,11 +29,11 @@ configure: error:
 
 ### Solution recommandée
 
-1. **Installer ncurses via Homebrew**  
+1. **Installer ncurses via Homebrew**
    Homebrew installe `ncurses` dans un chemin spécifique
    (`/usr/local/opt/ncurses` sur Intel), sans le symlinker dans `/usr/local` par
    défaut(3)(4)(7).
-2. **Forcer l’utilisation de la version Homebrew**  
+2. **Forcer l’utilisation de la version Homebrew**
    Avant de relancer la configuration, exportez ces variables :
 
    ```sh
@@ -44,14 +44,14 @@ configure: error:
 
    *(Adaptez `/usr/local` à `/opt/homebrew` sur Apple Silicon.)*
 
-3. **Relancer la configuration**  
+3. **Relancer la configuration**
    Lancez :
 
    ```sh
    ./configure --enable-utf8 --enable-libmagic
    ```
 
-4. **Compiler et installer**  
+4. **Compiler et installer**
 
    ```sh
    make
