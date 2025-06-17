@@ -5,7 +5,7 @@
 Lors de l’exécution de la commande `./configure` pour compiler nano, l’erreur suivante peut apparaître :
 
 ```text
-configure: error: 
+configure: error:
   *** UTF-8 support was requested, but insufficient support was
   *** detected in your curses and/or C libraries.  Please verify
   *** that both your curses library and your C library were built
