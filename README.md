@@ -1,6 +1,10 @@
 # Compilation et Installation de GNU nano 8.5 sur macOS Tahoe bêta 1 (Intel)
 
-Ce guide explique en détail comment installer ou compiler l’éditeur de texte GNU nano 8.5 sur un Mac Intel équipé de macOS Tahoe (bêta 1). Il couvre à la fois l’installation via Homebrew (recommandée) et la compilation manuelle, en tenant compte des spécificités et précautions liées à l’utilisation d’une version bêta de macOS.
+Ce guide explique en détail comment installer ou compiler l’éditeur de texte GNU
+nano 8.5 sur un Mac Intel équipé de macOS Tahoe (bêta 1). Il couvre à la fois
+l’installation via Homebrew (recommandée) et la compilation manuelle, en tenant
+compte des spécificités et précautions liées à l’utilisation d’une version bêta
+de macOS.
 
 ---
 
@@ -19,16 +23,21 @@ Ce guide explique en détail comment installer ou compiler l’éditeur de texte
 
 ## Contexte et avertissements
 
-- **macOS Tahoe (bêta 1)** est une version très récente et potentiellement instable du système. Certains outils ou dépendances peuvent ne pas être totalement compatibles.
+- **macOS Tahoe (bêta 1)** est une version très récente et potentiellement
+  instable du système. Certains outils ou dépendances peuvent ne pas être
+  totalement compatibles.
 - **Sauvegardez vos données** avant toute manipulation sur une version bêta.
-- **Utilisez la version bêta des outils de développement Xcode** (Command Line Tools) adaptée à Tahoe, téléchargeable sur le portail développeur Apple.
-- **Les chemins de bibliothèques ou la détection automatique peuvent différer** par rapport à des versions stables de macOS.
+- **Utilisez la version bêta des outils de développement Xcode** (Command Line
+  Tools) adaptée à Tahoe, téléchargeable sur le portail développeur Apple.
+- **Les chemins de bibliothèques ou la détection automatique peuvent différer**
+  par rapport à des versions stables de macOS.
 
 ---
 
 ## Méthode 1 : Installation via Homebrew
 
-**Homebrew** est le gestionnaire de paquets le plus populaire sur macOS. Il simplifie l’installation de logiciels et la gestion des dépendances.
+**Homebrew** est le gestionnaire de paquets le plus populaire sur macOS. Il
+simplifie l’installation de logiciels et la gestion des dépendances.
 
 ### Étapes pour l'installation via Homebrew
 
@@ -68,13 +77,15 @@ Ce guide explique en détail comment installer ou compiler l’éditeur de texte
    nano --version
    ```
 
-   > Le chemin doit pointer vers `/usr/local/bin/nano` (pour Mac Intel) et la version affichée doit être 8.5 ou ultérieure.
+   > Le chemin doit pointer vers `/usr/local/bin/nano` (pour Mac Intel) et la
+   > version affichée doit être 8.5 ou ultérieure.
 
 ---
 
 ## Méthode 2 : Compilation manuelle depuis le code source
 
-À utiliser si Homebrew échoue ou si vous souhaitez contrôler précisément les options de compilation.
+À utiliser si Homebrew échoue ou si vous souhaitez contrôler précisément les
+options de compilation.
 
 ### Étapes pour la compilation manuelle
 
@@ -89,7 +100,8 @@ Ce guide explique en détail comment installer ou compiler l’éditeur de texte
 
    - `ncurses` : gestion de l’interface terminal
    - `gettext` : internationalisation
-   - `libmagic` : détection du type de fichier (optionnelle mais recommandée pour la coloration syntaxique avancée)
+   - `libmagic` : détection du type de fichier (optionnelle mais recommandée
+     pour la coloration syntaxique avancée)
 
 3. **Télécharger et extraire le code source**
 
@@ -102,7 +114,8 @@ Ce guide explique en détail comment installer ou compiler l’éditeur de texte
 
 4. **Configurer la compilation**
 
-   Avant de lancer la configuration, exportez ces variables d’environnement pour garantir le support UTF-8 et la bonne détection des dépendances :
+   Avant de lancer la configuration, exportez ces variables d’environnement pour
+   garantir le support UTF-8 et la bonne détection des dépendances :
 
 - **Tentative initiale avec exports préliminaires :**
 
@@ -113,7 +126,8 @@ Ce guide explique en détail comment installer ou compiler l’éditeur de texte
      ./configure --enable-utf8 --enable-libmagic
      ```
 
-     > Astuce : Ces variables forcent l’utilisation de la version Homebrew de ncurses, indispensable pour le support Unicode sur macOS.
+     > Astuce : Ces variables forcent l’utilisation de la version Homebrew de
+     > ncurses, indispensable pour le support Unicode sur macOS.
 
 - **Si une dépendance n’est pas trouvée (ex : "ncurses not found") :**
 
@@ -138,16 +152,26 @@ Ce guide explique en détail comment installer ou compiler l’éditeur de texte
 
 > **Note sur l’option `--with-magic` et la bibliothèque `libmagic` :**
 >
-> - **Le nom correct de l'option** : L'option pour le script `configure` de nano n'est pas `--with-magic`, mais bien `--enable-libmagic`.
-> - **À quoi sert cette option ?** Cette option permet à nano d'utiliser la bibliothèque *libmagic*. Il s'agit de la bibliothèque qui se cache derrière la commande `file` de macOS et Linux, capable d'identifier le type d'un fichier (par exemple, un script Python, un document XML, un fichier C++) en analysant son contenu, et non pas seulement son extension.  
->   Pour nano, l'avantage est considérable : si vous ouvrez un fichier sans extension ou avec une extension incorrecte, nano peut quand même détecter automatiquement son type et appliquer la coloration syntaxique appropriée.
-> - **Le nom du paquet à installer** : Le paquet correspondant à cette bibliothèque s'appelle bien `libmagic`. Vous devez donc l'installer avant de lancer la compilation.
+> - **Le nom correct de l'option** : L'option pour le script `configure` de nano
+>   n'est pas `--with-magic`, mais bien `--enable-libmagic`.
+> - **À quoi sert cette option ?** Cette option permet à nano d'utiliser la
+>   bibliothèque *libmagic*. Il s'agit de la bibliothèque qui se cache derrière
+>   la commande `file` de macOS et Linux, capable d'identifier le type d'un
+>   fichier (par exemple, un script Python, un document XML, un fichier C++) en
+>   analysant son contenu, et non pas seulement son extension.  
+>   Pour nano, l'avantage est considérable : si vous ouvrez un fichier sans
+>   extension ou avec une extension incorrecte, nano peut quand même détecter
+>   automatiquement son type et appliquer la coloration syntaxique appropriée.
+> - **Le nom du paquet à installer** : Le paquet correspondant à cette
+>   bibliothèque s'appelle bien `libmagic`. Vous devez donc l'installer avant de
+>   lancer la compilation.
 
 ---
 
 ## Configuration de la coloration syntaxique
 
-Pour bénéficier de la coloration syntaxique avancée (notamment grâce à libmagic), ajoutez à votre fichier `~/.nanorc` :
+Pour bénéficier de la coloration syntaxique avancée (notamment grâce à
+libmagic), ajoutez à votre fichier `~/.nanorc` :
 
 ```text
 include "/usr/local/share/nano/*.nanorc"
@@ -159,14 +183,20 @@ include "/usr/local/share/nano/*.nanorc"
 
 ## Dépannage et conseils spécifiques à macOS Tahoe (bêta 1)
 
-- **En cas d’échec de compilation ou d’installation d’une dépendance**, consultez attentivement les messages d’erreur : ils vous indiqueront si un chemin doit être précisé ou si une bibliothèque manque.
-- **Pour libmagic**, si nano ne détecte pas la bibliothèque, vérifiez que le fichier `libmagic.dylib` est bien accessible dans `/usr/local/lib` (Intel). Si besoin, créez un lien symbolique :
+- **En cas d’échec de compilation ou d’installation d’une dépendance**,
+  consultez attentivement les messages d’erreur : ils vous indiqueront si un
+  chemin doit être précisé ou si une bibliothèque manque.
+- **Pour libmagic**, si nano ne détecte pas la bibliothèque, vérifiez que le
+  fichier `libmagic.dylib` est bien accessible dans `/usr/local/lib` (Intel). Si
+  besoin, créez un lien symbolique :
 
   ```sh
   sudo ln -s /usr/local/opt/libmagic/lib/libmagic.dylib /usr/local/lib/libmagic.dylib
   ```
 
-- **Gardez à l’esprit que la stabilité des outils Homebrew ou Xcode peut varier sur une bêta.** Consultez régulièrement les issues sur GitHub ou les forums pour des solutions communautaires récentes.
+- **Gardez à l’esprit que la stabilité des outils Homebrew ou Xcode peut varier
+  sur une bêta.** Consultez régulièrement les issues sur GitHub ou les forums
+  pour des solutions communautaires récentes.
 
 ---
 
@@ -189,16 +219,24 @@ include "/usr/local/share/nano/*.nanorc"
 
 > **Note importante :**
 >
-> Sur macOS avec Homebrew, il n’est pas toujours indispensable de spécifier manuellement les variables d’environnement `LDFLAGS` et `CPPFLAGS` lors de la compilation d’un programme utilisant une bibliothèque comme libmagic. Homebrew configure généralement les chemins nécessaires automatiquement.
+> Sur macOS avec Homebrew, il n’est pas toujours indispensable de spécifier
+> manuellement les variables d’environnement `LDFLAGS` et `CPPFLAGS` lors de la
+> compilation d’un programme utilisant une bibliothèque comme libmagic. Homebrew
+> configure généralement les chemins nécessaires automatiquement.
 >
-> Cependant, il arrive que le script de configuration (`./configure`) ne détecte pas correctement les bibliothèques installées par Homebrew, notamment si le paquet est "keg-only" ou si le script ne recherche pas dans les chemins Homebrew par défaut. Définir explicitement :
+> Cependant, il arrive que le script de configuration (`./configure`) ne détecte
+> pas correctement les bibliothèques installées par Homebrew, notamment si le
+> paquet est "keg-only" ou si le script ne recherche pas dans les chemins
+> Homebrew par défaut. Définir explicitement :
 >
 > ```sh
 > export LDFLAGS="-L/usr/local/opt/libmagic/lib"
 > export CPPFLAGS="-I/usr/local/opt/libmagic/include"
 > ```
 >
-> avant d’exécuter `./configure` garantit que la compilation prendra bien en compte les bibliothèques Homebrew, en particulier dans des environnements non standards ou sur des versions récentes/bêtas de macOS.
+> avant d’exécuter `./configure` garantit que la compilation prendra bien en
+> compte les bibliothèques Homebrew, en particulier dans des environnements non
+> standards ou sur des versions récentes/bêtas de macOS.
 
 ---
 
