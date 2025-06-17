@@ -131,13 +131,13 @@ options de compilation.
 
 - **Si une dépendance n’est pas trouvée (ex : "ncurses not found") :**
 <!-- markdownlint-disable MD013 -->
-     ```sh
+  ```sh
      export LDFLAGS="-L/usr/local/opt/ncurses/lib -L/usr/local/opt/gettext/lib -L/usr/local/opt/libmagic/lib"
      export CPPFLAGS="-I/usr/local/opt/ncurses/include -I/usr/local/opt/gettext/include -I/usr/local/opt/libmagic/include"
      ./configure --enable-utf8 --enable-libmagic
-     ```
+  ```
 
-     > Adaptez les chemins si Homebrew est installé ailleurs.
+  > Adaptez les chemins si Homebrew est installé ailleurs.
 <!-- markdownlint-disable-next-line MD029 -->
 5. **Compiler et installer**
 
