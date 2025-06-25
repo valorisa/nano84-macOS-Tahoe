@@ -1,7 +1,7 @@
-# Compilation et Installation de GNU nano 8.5 sur macOS Tahoe bêta 1 (Intel)
+# Compilation et Installation de GNU nano 8.5 sur macOS Tahoe bêta 2 (Intel)
 
 Ce guide explique en détail comment installer ou compiler l’éditeur de texte GNU
-nano 8.5 sur un Mac Intel équipé de macOS Tahoe (bêta 1). Il couvre à la fois
+nano 8.5 sur un Mac Intel équipé de macOS Tahoe (bêta 2). Il couvre à la fois
 l’installation via Homebrew (recommandée) et la compilation manuelle, en tenant
 compte des spécificités et précautions liées à l’utilisation d’une version bêta
 de macOS.
@@ -14,7 +14,7 @@ de macOS.
 - [Méthode 1 : Installation via Homebrew](#méthode-1--installation-via-homebrew)
 - [Méthode 2 : Compilation manuelle depuis le code source](#méthode-2--compilation-manuelle-depuis-le-code-source)
 - [Configuration de la coloration syntaxique](#configuration-de-la-coloration-syntaxique)
-- [Dépannage et conseils spécifiques à macOS Tahoe (bêta 1)](#dépannage-et-conseils-spécifiques-à-macos-tahoe-bêta-1)
+- [Dépannage et conseils spécifiques à macOS Tahoe (bêta 2)](#dépannage-et-conseils-spécifiques-à-macos-tahoe-bêta-2)
 - [Résumé des commandes principales](#résumé-des-commandes-principales)
 - [Note sur la détection automatique des bibliothèques Homebrew](#note-sur-la-détection-automatique-des-bibliothèques-homebrew)
 - [Ressources utiles](#ressources-utiles)
@@ -23,7 +23,7 @@ de macOS.
 
 ## Contexte et avertissements
 
-- **macOS Tahoe (bêta 1)** est une version très récente et potentiellement
+- **macOS Tahoe (bêta 2)** est une version très récente et potentiellement
   instable du système. Certains outils ou dépendances peuvent ne pas être
   totalement compatibles.
 - **Sauvegardez vos données** avant toute manipulation sur une version bêta.
