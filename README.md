@@ -47,7 +47,7 @@ simplifie l’installation de logiciels et la gestion des dépendances.
    xcode-select --install
    ```
 
-   > Vérifiez que la version installée correspond bien à macOS Tahoe (bêta 1).
+   > Vérifiez que la version installée correspond bien à macOS Tahoe (bêta 2).
 
 2. **Installer ou mettre à jour Homebrew**
 
