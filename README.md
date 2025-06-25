@@ -181,7 +181,7 @@ include "/usr/local/share/nano/*.nanorc"
 
 ---
 
-## Dépannage et conseils spécifiques à macOS Tahoe (bêta 1)
+## Dépannage et conseils spécifiques à macOS Tahoe (bêta 2)
 
 - **En cas d’échec de compilation ou d’installation d’une dépendance**,
   consultez attentivement les messages d’erreur : ils vous indiqueront si un
